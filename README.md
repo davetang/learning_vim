@@ -65,15 +65,39 @@ Here are some new shortcuts that I need to practice.
 * `O` insert a new line before the current one
 * `^` go to first non-blank character (good for indented code)
 * `g_` go to the last non-blank character of line
+
+```
+          aaaaa
+    bbbb    cccccccccc
+done          
+```
+
 * `*` and `#` go to next and previous occurrence of word under cursor. Use `n`
   and `N` to navigate.
-* `fa` go to next occurrence of the letter `a` on the line. Then use `;` to
+* `fx` go to next occurrence of the letter `x` on **the line**. Then use `;` to
   find the next or `,` previous occurrence.
+
+```
+this is the first occurrence of xxxx. Next one is here xxxx.
+Another one is here xxxx
+xxxx is the last one.
+```
+
 * `t,` go to just before the character `,`. Then use `;` and `,` to navigate.
-* `dt"` to remove everything until `"`.
-* `di"` deletes inside the quotation marks
-* `ci"` deletes inside the quotation marks, then enter insert mode. Also works
-  with `)` and `}`.
+
+```
+this is a sentence, which is for testing, and practicing.
+```
+
+* `dt"` (delete till ") to remove everything until `"`.
+* `di"` deletes inside the quotation marks (works even if cursor is at start of line)
+* `ci"` deletes inside the quotation marks, then enter insert mode. Also works  with `)` and `}`.
+
+```
+left spacer "This is sentence is between double quotes" right spacer "another"
+left spacer (This is sentence is between parenthesises) right spacer (another)
+left spacer {This is sentence is between braces} right spacer {another}
+```
 
 ### Find and till
 
