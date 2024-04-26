@@ -43,7 +43,7 @@ Use the following to check format options:
 
 ## Key notation
 
-[What is the meaning of a <CR> at the end of some vim mappings?](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings).
+[What is the meaning of a `<CR>` at the end of some vim mappings?](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings).
 
 ```console
 :help key-notation
