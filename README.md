@@ -1,19 +1,20 @@
 ## Table of Contents
 
 - [README](#readme)
-  - [Compiling](#compiling)
+  - [Setup](#setup)
+    - [Compiling](#compiling)
+    - [Plugins](#plugins)
+      - [Nvim-R](#nvim-r)
+      - [vim-colors-solarized](#vim-colors-solarized)
+      - [coc.nvim](#cocnvim)
   - [Tips](#tips)
-  - [Key notation](#key-notation)
-  - [Practice](#practice)
-    - [Find and till](#find-and-till)
+    - [Key notation](#key-notation)
+    - [Practice](#practice)
+      - [Find and till](#find-and-till)
   - [Zone selection](#zone-selection)
   - [Splits](#splits)
   - [Line split](#line-split)
   - [Mapping keys](#mapping-keys)
-  - [Plugins](#plugins)
-    - [Nvim-R](#nvim-r)
-    - [vim-colors-solarized](#vim-colors-solarized)
-    - [coc.nvim](#cocnvim)
   - [Rust](#rust)
   - [Python code completion](#python-code-completion)
 
@@ -21,7 +22,9 @@
 
 Vim for life.
 
-## Compiling
+## Setup
+
+### Compiling
 
 Install your own version to `${HOME}/.local/bin/vim`.
 
@@ -33,6 +36,112 @@ make
 make install
 ```
 
+### Plugins
+
+Install [vim-plug](https://github.com/junegunn/vim-plug).
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Add the following to `~/.vimrc`.
+
+```
+" https://github.com/junegunn/vim-plug#installation
+" Plugins will be downloaded under the specified directory.
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'altercation/vim-colors-solarized'
+
+call plug#end()
+```
+
+Include plugins between `plug#begin()` and `plug#end()`.
+
+```
+" install plugins by
+" Reloading .vimrc and type :PlugInstall
+" Declare the list of plugins.
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/seoul256.vim'
+Plug 'gabrielelana/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'LukeGoodsell/nextflow-vim'
+" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+```
+
+Run
+
+    :PlugInstall
+    :PlugUpdate
+
+#### Nvim-R
+
+[Nvim-R](https://github.com/jalvesaq/Nvim-R) improves Vim's support to edit R
+scripts; install with `vim-plug`. Requires R to be installed.
+
+Open an R file and type `\rf` for a terminal buffer with an R console; to end
+it, hit `\rq`.
+
+* Send :: Entire File \aa
+* Send :: Entire Block \bb
+* Send :: Entire Function \ff
+* Send :: Entire Selection \ss
+* Send :: Entire Line \l
+
+Use `\rh` to get help on a function and `\re` to see the examples. Each of
+these will open in a split buffer with the relevant information.
+
+See [Turning Vim Into An R
+IDE](https://www.freecodecamp.org/news/turning-vim-into-an-r-ide-cd9602e8c217/).
+
+To prevent underscores being converted into `<-` add the following to your .vimrc:
+
+    let R_assign = 0
+
+#### vim-colors-solarized
+
+[Solarized dark](https://github.com/altercation/vim-colors-solarized).
+
+```
+call plug#begin('~/.vim/plugged')
+
+Plug 'altercation/vim-colors-solarized'
+
+call plug#end()
+
+" -- solarized personal conf
+set background=dark
+try
+    colorscheme solarized
+catch
+endtry
+```
+
+#### coc.nvim
+
+[coc.nvim](https://github.com/neoclide/coc.nvim) is a Nodejs extension host for
+Vim. Load extensions like VSCode and host language servers.
+
+The default is to use C-y to insert and C-n and C-p to go through choices.
+
+[Completion with sources](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources) has instructions for remapping the default.
+
+[Use](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-cr-to-confirm-completion) `<cr>` (return character) to confirm completion.
+
+```
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+```
+
+[Use](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-and-s-tab-to-navigate-the-completion-list) `<Tab>` and `<S-Tab>` to navigate the completion list:
+
+```
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+```
+
 ## Tips
 
 Read [Vim Tips Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki).
@@ -41,9 +150,9 @@ Use the following to check format options:
 
     :set fo?
 
-## Key notation
+### Key notation
 
-[What is the meaning of a `<CR>` at the end of some vim mappings?](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings).
+When reading documentation and tips about Vim, you'll see `<CR>` a lot. [What is the meaning of a `<CR>` at the end of some vim mappings?](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings).
 
 ```console
 :help key-notation
@@ -57,9 +166,9 @@ notation    meaning            equivalent  decimal    value(s)
 <Enter>     same as <CR>                              *<Enter>*
 ```
 
-## Practice
+### Practice
 
-Here are some new shortcuts that I need to practice.
+The only way to get good with Vim is by practicing. Here are some new shortcuts that I need to practice.
 
 * `o` insert a new line after the current one
 * `O` insert a new line before the current one
@@ -99,7 +208,7 @@ left spacer (This is sentence is between parenthesises) right spacer (another)
 left spacer {This is sentence is between braces} right spacer {another}
 ```
 
-### Find and till
+#### Find and till
 
 [Find and till tips](https://vim.fandom.com/wiki/Tutorial#Find_and_till).
 
@@ -210,113 +319,6 @@ Map line splitting.
 ```
 :nnoremap <F5> gqq
 :nnoremap <F6> vipJgqq
-```
-
-## Plugins
-
-Install [vim-plug](https://github.com/junegunn/vim-plug).
-
-```bash
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-Add the following to `~/.vimrc`.
-
-```
-" https://github.com/junegunn/vim-plug#installation
-" Plugins will be downloaded under the specified directory.
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'altercation/vim-colors-solarized'
-
-call plug#end()
-```
-
-Include plugins between `plug#begin()` and `plug#end()`.
-
-```
-" install plugins by
-" Reloading .vimrc and type :PlugInstall
-" Declare the list of plugins.
-Plug 'tpope/vim-sensible'
-Plug 'junegunn/seoul256.vim'
-Plug 'gabrielelana/vim-markdown'
-Plug 'godlygeek/tabular'
-Plug 'LukeGoodsell/nextflow-vim'
-" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-```
-
-Run
-
-    :PlugInstall
-    :PlugUpdate
-
-### Nvim-R
-
-[Nvim-R](https://github.com/jalvesaq/Nvim-R) improves Vim's support to edit R
-scripts; install with `vim-plug`.
-
-Open an R file and type `\rf` for a terminal buffer with an R console; to end
-it, hit `\rq`.
-
-* Send :: Entire File \aa
-* Send :: Entire Block \bb
-* Send :: Entire Function \ff
-* Send :: Entire Selection \ss
-* Send :: Entire Line \l
-
-Use `\rh` to get help on a function and `\re` to see the examples. Each of
-these will open in a split buffer with the relevant information.
-
-See [Turning Vim Into An R
-IDE](https://www.freecodecamp.org/news/turning-vim-into-an-r-ide-cd9602e8c217/).
-
-To prevent underscores being converted into `<-` add the following to your .vimrc:
-
-    let R_assign = 0
-
-### vim-colors-solarized
-
-[Solarized dark](https://github.com/altercation/vim-colors-solarized).
-
-```
-call plug#begin('~/.vim/plugged')
-
-Plug 'altercation/vim-colors-solarized'
-
-call plug#end()
-
-" -- solarized personal conf
-set background=dark
-try
-    colorscheme solarized
-catch
-endtry
-```
-
-### coc.nvim
-
-[coc.nvim](https://github.com/neoclide/coc.nvim) is a Nodejs extension host for
-Vim. Load extensions like VSCode and host language servers.
-
-The default is to use C-y to insert and C-n and C-p to go through choices.
-
-[Completion with sources](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources) has instructions for remapping the default.
-
-[Use](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-cr-to-confirm-completion) `<cr>` (return character) to confirm completion.
-
-```
-inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-```
-
-[Use](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-and-s-tab-to-navigate-the-completion-list) `<Tab>` and `<S-Tab>` to navigate the completion list:
-
-```
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 ```
 
 ## Rust
