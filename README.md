@@ -8,6 +8,7 @@
       - [vim-colors-solarized](#vim-colors-solarized)
       - [coc.nvim](#cocnvim)
   - [Tips](#tips)
+    - [Execute current line in Bash](#execute-current-line-in-bash)
     - [Key notation](#key-notation)
     - [Practice](#practice)
       - [Find and till](#find-and-till)
@@ -155,6 +156,10 @@ Read [Vim Tips Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki).
 Use the following to check format options:
 
     :set fo?
+
+### Execute current line in Bash
+
+[There are several ways](https://stackoverflow.com/questions/19883917/execute-current-line-in-bash-from-vim) to execute the current line in Bash. Personally, the easiest way is `!!bash<CR>` (which is also easy to remember as well: bang-bang-bash). The only downside is that the execute line is replaced but you can always just do `yyp` first before the bang-bang.
 
 ### Key notation
 
