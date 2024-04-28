@@ -1,6 +1,6 @@
 ## Table of Contents
 
-- [README](#readme)
+- [Vim](#vim)
   - [Setup](#setup)
     - [Compiling](#compiling)
     - [Plugins](#plugins)
@@ -18,11 +18,17 @@
   - [Rust](#rust)
   - [Python code completion](#python-code-completion)
 
-# README
+# Vim
 
 Vim for life.
 
 ## Setup
+
+To test the setup and `.vimrc` use Docker.
+
+```console
+docker run --rm -it -v $(pwd):$(pwd) -w $(pwd) davetang/build:23.04 /bin/bash
+```
 
 ### Compiling
 
@@ -32,8 +38,7 @@ Install your own version to `${HOME}/.local/bin/vim`.
 git clone https://github.com/vim/vim.git
 cd vim
 ./configure --prefix=${HOME}/.local/
-make
-make install
+make && make install
 ```
 
 ### Plugins
@@ -122,10 +127,9 @@ endtry
 
 #### coc.nvim
 
-[coc.nvim](https://github.com/neoclide/coc.nvim) is a Nodejs extension host for
-Vim. Load extensions like VSCode and host language servers.
+[coc.nvim](https://github.com/neoclide/coc.nvim) is a Nodejs extension host for Vim. Load extensions like VSCode and host language servers.
 
-The default is to use C-y to insert and C-n and C-p to go through choices.
+The default is to use C-y to insert and C-n (n for next) and C-p (p for previous) to go through choices.
 
 [Completion with sources](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources) has instructions for remapping the default.
 
@@ -141,6 +145,8 @@ inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 ```
+
+Note that the custom settings above (e.g. `<CR>` for completion) do not work when editing certain files like Markdown.
 
 ## Tips
 
