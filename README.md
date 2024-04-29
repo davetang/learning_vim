@@ -8,6 +8,7 @@
       - [vim-colors-solarized](#vim-colors-solarized)
       - [coc.nvim](#cocnvim)
   - [Tips](#tips)
+    - [Basic word movements](#basic-word-movements)
     - [Execute current line in Bash](#execute-current-line-in-bash)
     - [Selecting entire word that includes dashes](#selecting-entire-word-that-includes-dashes)
     - [Key notation](#key-notation)
@@ -158,6 +159,21 @@ Use the following to check format options:
 
     :set fo?
 
+### Basic word movements
+
+* `w` move to beginning of next word
+* `b` move to previous beginning of word
+* `e` move to end of word
+* `W` move to beginning of next word after a whitespace
+* `B` move to beginning of previous word before a whitespace
+* `E` move to end of word before a whitespace
+
+Test the difference between `w` and `e` with `W` and `E` below.
+
+```
+one two three, four,, five,,, six
+```
+
 ### Execute current line in Bash
 
 [There are several ways](https://stackoverflow.com/questions/19883917/execute-current-line-in-bash-from-vim) to execute the current line in Bash. Personally, the easiest way is `!!bash<CR>` (which is also easy to remember as well: bang-bang-bash). The only downside is that the execute line is replaced but you can always just do `yyp` first before the bang-bang.
@@ -231,12 +247,13 @@ this is a sentence, which is for testing, and practicing.
 
 * `dt"` (delete till ") to remove everything until `"`.
 * `di"` deletes inside the quotation marks (works even if cursor is at start of line)
-* `ci"` deletes inside the quotation marks, then enter insert mode. Also works  with `)` and `}`.
+* `ci"` deletes inside the quotation marks, then enter insert mode. Also works  with `)`, `}`, and ```.
 
 ```
 left spacer "This is sentence is between double quotes" right spacer "another"
 left spacer (This is sentence is between parenthesises) right spacer (another)
 left spacer {This is sentence is between braces} right spacer {another}
+left spacer `This is sentence is between braces` right spacer `another`
 ```
 
 #### Find and till
