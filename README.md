@@ -260,7 +260,7 @@ this is a sentence, which is for testing, and practicing.
 
 * `dt"` (delete till ") to remove everything until `"`.
 * `di"` deletes inside the quotation marks (works even if cursor is at start of line)
-* `ci"` deletes inside the quotation marks, then enter insert mode. Also works  with `)`, `}`, and ```.
+* `ci"` changes inside the quotation marks, then enter insert mode. Also works  with `)`, `}`, and ```.
 
 ```
 left spacer "This is sentence is between double quotes" right spacer "another"
@@ -268,6 +268,19 @@ left spacer (This is sentence is between parenthesises) right spacer (another)
 left spacer {This is sentence is between braces} right spacer {another}
 left spacer `This is sentence is between braces` right spacer `another`
 ```
+
+* `guw` make a word lowercase
+* `gUw` make a work UPPERCASE
+
+Practice folding.
+
+* `zf` to defind a fold
+
+Start
+folding
+End
+
+* `zo` to open a fold at the cursor.
 
 #### Find and till
 
