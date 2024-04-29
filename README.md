@@ -9,6 +9,7 @@
       - [coc.nvim](#cocnvim)
   - [Tips](#tips)
     - [Execute current line in Bash](#execute-current-line-in-bash)
+    - [Selecting entire word that includes dashes](#selecting-entire-word-that-includes-dashes)
     - [Key notation](#key-notation)
     - [Practice](#practice)
       - [Find and till](#find-and-till)
@@ -160,6 +161,25 @@ Use the following to check format options:
 ### Execute current line in Bash
 
 [There are several ways](https://stackoverflow.com/questions/19883917/execute-current-line-in-bash-from-vim) to execute the current line in Bash. Personally, the easiest way is `!!bash<CR>` (which is also easy to remember as well: bang-bang-bash). The only downside is that the execute line is replaced but you can always just do `yyp` first before the bang-bang.
+
+### Selecting entire word that includes dashes
+
+Let's say I have the string:
+
+    hello how-ar[]e-you doing
+
+where [] is my cursor. How would I efficiently select how-are-you such that:
+
+    hello [how-are-you] doing
+
+Use `viW`.
+
+    hello how-are-you doing
+
+* the `iw` text-object ("inner word") would cover "are"
+* the `iW` text-object ("inner WORD") would cover "how-are-you"
+
+See `:help navigation`.
 
 ### Key notation
 
