@@ -8,6 +8,7 @@
       - [vim-colors-solarized](#vim-colors-solarized)
       - [coc.nvim](#cocnvim)
   - [Tips](#tips)
+    - [Vanilla mode](#vanilla-mode)
     - [Basic word movements](#basic-word-movements)
     - [Execute current line in Bash](#execute-current-line-in-bash)
     - [Selecting entire word that includes dashes](#selecting-entire-word-that-includes-dashes)
@@ -158,6 +159,18 @@ Read [Vim Tips Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki).
 Use the following to check format options:
 
     :set fo?
+
+### Vanilla mode
+
+Some modes that are good for debugging.
+
+The argument `-u <vimrc>` (Use <vimrc> instead of any .vimrc) can accept `NONE`, which will start Vim in "vanilla" mode.
+
+```console
+vim -u NONE
+```
+
+The argument `--noplugin` will stop Vim from loading plugin scripts.
 
 ### Basic word movements
 
