@@ -8,6 +8,7 @@
       - [vim-colors-solarized](#vim-colors-solarized)
       - [coc.nvim](#cocnvim)
   - [Tips](#tips)
+    - [vimtutor](#vimtutor)
     - [Vanilla mode](#vanilla-mode)
     - [Basic word movements](#basic-word-movements)
     - [Execute current line in Bash](#execute-current-line-in-bash)
@@ -160,6 +161,16 @@ Use the following to check format options:
 
     :set fo?
 
+* A word ends at a non-word character, such as a `.`, `-` or `)`. To change what Vim considers to be a word, see the 'iskeyword' option.
+* `33G` puts you on line 33; `50%` moves you halfway the file.
+
+### vimtutor
+
+Open Vim and type `:h vimtutor` (or `:vert h vimtutor` if you perfer a vertical split) to access vimtutor, which is a tutorial built into Vim that you can follow along interactively.
+
+* Use `<CTRL> ww` to switch between the windows.
+* Use `<CTRL> ]` when the cursor is under a link to go to the link, e.g. the next chapter
+
 ### Vanilla mode
 
 Some modes that are good for debugging.
@@ -230,6 +241,9 @@ notation    meaning            equivalent  decimal    value(s)
 
 The only way to get good with Vim is by practicing. Here are some new shortcuts that I need to practice.
 
+* Use `<CTRL> F` and `<CTRL> B` to scroll forward and backward a whole screen
+* Use `H`, `M`, and `L` to move to the top, middle, and bottom of the current visible page.
+* `J` to join two lines together
 * `o` insert a new line after the current one
 * `O` insert a new line before the current one
 * `^` go to first non-blank character (good for indented code)
