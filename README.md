@@ -7,6 +7,7 @@
       - [Nvim-R](#nvim-r)
       - [vim-colors-solarized](#vim-colors-solarized)
       - [coc.nvim](#cocnvim)
+      - [vim-gitgutter](#vim-gitgutter)
   - [Tips](#tips)
     - [vimtutor](#vimtutor)
     - [Vanilla mode](#vanilla-mode)
@@ -152,6 +153,22 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 ```
 
 Note that the custom settings above (e.g. `<CR>` for completion) do not work when editing certain files like Markdown.
+
+#### vim-gitgutter
+
+A [Vim plugin](https://github.com/airblade/vim-gitgutter) which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
+
+You can jump between changed lines (hunks) by using:
+
+* jump to next hunk (change): `]c`
+* jump to previous hunk (change): `[c`
+
+You can stage or undo an individual hunk when your cursor is in it:
+
+* stage the hunk with `<Leader>hs`
+* undo it with `<Leader>hu`
+
+The `<Leader>` key is mapped to `\` by default.
 
 ## Tips
 
