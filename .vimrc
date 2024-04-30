@@ -27,8 +27,6 @@ Plug 'altercation/vim-colors-solarized'
 " show which line changed since your last commit
 Plug 'airblade/vim-gitgutter'
 " de facto git plugin
-" Reset your changes from the latest git commit with :Gread.
-" Stage your changes with :Gwrite.
 Plug 'tpope/vim-fugitive'
 Plug 'jalvesaq/Nvim-R'
 
