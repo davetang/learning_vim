@@ -25,6 +25,8 @@
   - [Mapping keys](#mapping-keys)
   - [Rust](#rust)
   - [Python code completion](#python-code-completion)
+- [Neovim](#neovim)
+  - [Articles](#articles)
 
 # Vim
 
