@@ -9,6 +9,7 @@
       - [coc.nvim](#cocnvim)
       - [vim-gitgutter](#vim-gitgutter)
       - [fugitive.vim](#fugitivevim)
+      - [vim-easy-align](#vim-easy-align)
   - [Tips](#tips)
     - [vimtutor](#vimtutor)
     - [Vanilla mode](#vanilla-mode)
@@ -181,6 +182,26 @@ The crown jewel of Fugitive is `:Git` (or just `:G`), which calls any arbitrary 
 * `:Git commit`, `:Git rebase -i`, and other commands that invoke an editor do their editing in the current Vim instance.
 * Reset your changes from the latest git commit with `:Gread`.
 * Stage your changes with `:Gwrite`.
+
+#### vim-easy-align
+
+[vim-easy-align](https://github.com/junegunn/vim-easy-align) is a simple, easy-to-use Vim alignment plugin.
+
+apple =red
+grass+=green
+sky-= blue
+
+Try these commands on the paragraph above :
+
+* `vipga=`
+    * visual-select inner paragraph
+    * Start EasyAlign command (ga)
+    * Align around =
+* `gaip=`
+    * Start EasyAlign command (ga) for inner paragraph
+    * Align around =
+
+Works nicely for Markdown tables too.
 
 ## Tips
 
