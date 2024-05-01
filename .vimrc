@@ -34,7 +34,12 @@ Plug 'jalvesaq/Nvim-R'
 Plug 'junegunn/vim-easy-align'
 " Just select and type Return then space. Type Return many type to change the
 " alignments.
-vnoremap <silent> <Enter> :EasyAlign<cr>
+" vnoremap <silent> <Enter> :EasyAlign<cr>
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
