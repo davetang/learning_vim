@@ -187,9 +187,11 @@ The crown jewel of Fugitive is `:Git` (or just `:G`), which calls any arbitrary 
 
 [vim-easy-align](https://github.com/junegunn/vim-easy-align) is a simple, easy-to-use Vim alignment plugin.
 
+```
 apple =red
 grass+=green
 sky-= blue
+```
 
 Try these commands on the paragraph above :
 
