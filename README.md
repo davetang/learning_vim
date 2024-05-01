@@ -515,3 +515,27 @@ In your `vimrc` file, first add the following line to enable filetype plugins:
 Next make sure you set `g:pydiction_location` to the full path of `complete-dict`.
 
     let g:pydiction_location = '/path/to/complete-dict'
+
+# Neovim
+
+[Neovim](https://github.com/neovim/neovim/wiki/Introduction) is a project that seeks to aggressively refactor Vim source code in order to achieve the following goals:
+
+* Simplify maintenance to improve the speed that bug fixes and features get merged.
+* Split the work among multiple developers.
+* Enable the implementation of new/modern user interfaces without any modifications to the core source.
+* Improve the extensibility power with a new plugin architecture based on coprocesses. Plugins will be written in any programming language without any explicit support from the editor.
+
+Install on [Debian](https://github.com/neovim/neovim/blob/master/INSTALL.md#debian).
+
+```console
+sudo apt update
+sudo apt install -y neovim
+```
+
+Then use `nvim` to start Neovim.
+
+## Articles
+
+* [What is Neovim, and how is it different from Vim?](https://vi.stackexchange.com/questions/34/what-is-neovim-and-how-is-it-different-from-vim).
+* [How to share config between Vim and Neovim](https://vi.stackexchange.com/questions/12794/how-to-share-config-between-vim-and-neovim)
+* [Transitioning from Vim](https://neovim.io/doc/user/nvim.html#nvim-from-vim)
