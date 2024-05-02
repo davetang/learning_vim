@@ -26,6 +26,7 @@
   - [Rust](#rust)
   - [Python code completion](#python-code-completion)
 - [Neovim](#neovim)
+  - [Transitioning from Vim](#transitioning-from-vim)
   - [Articles](#articles)
 
 # Vim
@@ -534,10 +535,39 @@ sudo apt update
 sudo apt install -y neovim
 ```
 
+Alternatively, download compiled binaries from the [Neovim repo](https://github.com/neovim/neovim/releases).
+
 Then use `nvim` to start Neovim.
+
+## Transitioning from Vim
+
+Set up vim-plug for [Neovim](https://github.com/junegunn/vim-plug?tab=readme-ov-file#neovim)
+
+```console
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+Follow these [instructions](https://neovim.io/doc/user/nvim.html#nvim-from-vim) to set up the config file.
+
+1. To start the transition, create your `init.vim` (user config) file:
+
+```vim
+:exe 'edit '.stdpath('config').'/init.vim'
+:write ++p
+```
+
+2. When you run the command, it creates and opens `init.vim`; add these contents:
+
+```vim
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
+```
+
+3. Close and re-open `nvim` and then re-install plugins using `:PlugInstall`.
 
 ## Articles
 
 * [What is Neovim, and how is it different from Vim?](https://vi.stackexchange.com/questions/34/what-is-neovim-and-how-is-it-different-from-vim).
 * [How to share config between Vim and Neovim](https://vi.stackexchange.com/questions/12794/how-to-share-config-between-vim-and-neovim)
-* [Transitioning from Vim](https://neovim.io/doc/user/nvim.html#nvim-from-vim)
