@@ -188,3 +188,6 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 let R_assign = 0
 " do not convert ` into `r`
 let R_rmdchunk = 0
+
+" disable mouse completely by unsetting the 'mouse' option
+set mouse=
