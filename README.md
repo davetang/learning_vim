@@ -351,6 +351,12 @@ End
 
 * `zo` to open a fold at the cursor.
 
+Use `r` to make a replacement. This is handy in visual mode, when I want to replace a selection of text with a space.
+
+```
+r<space>
+```
+
 #### Find and till
 
 [Find and till tips](https://vim.fandom.com/wiki/Tutorial#Find_and_till).
