@@ -312,8 +312,7 @@ done
 
 * `*` and `#` go to next and previous occurrence of word under cursor. Use `n`
   and `N` to navigate.
-* `fx` go to next occurrence of the letter `x` on **the line**. Then use `;` to
-  find the next or `,` previous occurrence.
+* `fx` go to next occurrence of the letter `x` on **the line**. Then use `;` to find the next or `,` previous occurrence. To do this in reverse or backwards, use `F` instead of `f`.
 
 ```
 this is the first occurrence of xxxx. Next one is here xxxx.
@@ -327,7 +326,7 @@ xxxx is the last one.
 this is a sentence, which is for testing, and practicing.
 ```
 
-* `dt"` (delete till ") to remove everything until `"`.
+* `dt"` (delete till ") to remove everything until `"`. To do this in reverse or backwards, use `T` instead of `t`.
 * `di"` deletes inside the quotation marks (works even if cursor is at start of line)
 * `ci"` changes inside the quotation marks, then enter insert mode. Also works  with `)`, `}`, and ```.
 
