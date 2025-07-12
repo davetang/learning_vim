@@ -297,6 +297,7 @@ notation    meaning            equivalent  decimal    value(s)
 
 The only way to get good with Vim is by practicing. Here are some new shortcuts that I need to practice.
 
+* Use `"+y` to yank to the clipboard
 * Use `<CTRL> F` and `<CTRL> B` to scroll forward and backward a whole screen
 * Use `H`, `M`, and `L` to move to the top, middle, and bottom of the current visible page.
 * `J` to join two lines together
