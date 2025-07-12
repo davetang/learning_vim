@@ -20,6 +20,7 @@
     - [Practice](#practice)
       - [Find and till](#find-and-till)
   - [Zone selection](#zone-selection)
+  - [Marks](#marks)
   - [Splits](#splits)
   - [Line split](#line-split)
   - [Mapping keys](#mapping-keys)
@@ -394,6 +395,37 @@ Suppose the cursor is on the first `o`:
 * `va)` will select `("foo")`.
 * `v2i)` will select `map (+) ("foo")`.
 * `v2a)` will select `(map (+) ("foo"))`.
+
+## Marks
+
+Marks help you bookmark positions in your files for quick navigation.
+
+| Command         | Description                                            |
+| --------------- | ------------------------------------------------------ |
+| `ma`            | Set mark `a` at current position (local to this file)  |
+| `:marks`        | List all defined marks                                 |
+| `` `a ``        | Jump to **exact position** (line + column) of mark `a` |
+| `'a`            | Jump to **start of line** of mark `a`                  |
+| `:delmarks a`   | Delete mark `a`                                        |
+| `:delmarks A-Z` | Delete all global marks                                |
+
+Types of marks.
+
+| Mark  | Scope  | Jump Type           | Description                      |
+| ----- | ------ | ------------------- | -------------------------------- |
+| `a–z` | Local  | Within current file | Custom bookmarks                 |
+| `A–Z` | Global | Across files        | Useful for multi-file navigation |
+
+Automatic/internal marks.
+
+| Mark             | Description                            |
+| ---------------- | -------------------------------------- |
+| `` `. ``         | Last change position                   |
+| `''` or ` ` \`\` | Cursor position before last jump       |
+| `^`              | Position where you exited insert mode  |
+| `"`              | Last exited position in current file   |
+| `[`, `]`         | Start and end of last text change      |
+| `<`, `>`         | Start and end of last visual selection |
 
 ## Splits
 
