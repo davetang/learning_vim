@@ -445,16 +445,18 @@ nvim file1.txt file2.txt
 | Open buffer in horizontal split | `:sp <filename>`             |
 | Delete buffer (keep window)     | `:bd` or `:bdelete`          |
 
-This allows you to work with multiple files efficiently and to copy/paste between them!
+This allows you to work with multiple files efficiently and to copy/paste between them! Note that when you open a buffer in a split, quitting the split will not remove the buffer. Use the delete buffer command as shown above.
 
 ## Splits
 
-See `:help split` for more information.
+Split the window into two! Useful for viewing the same file into two different locations at once or viewing two files at once; see [Buffers](#buffers). Also checkout `:help split` for more information.
 
 * `:split` creates a split.
 * `:vsplit` creates a vertical split.
 * Use `<C-w><w>` to cycle between splits.
 * Use `<C-w><direction>` to move between splits.
+
+To close a split, just quit `:q` it as you normally would.
 
 ## Line split
 
