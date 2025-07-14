@@ -21,6 +21,7 @@
       - [Find and till](#find-and-till)
   - [Zone selection](#zone-selection)
   - [Marks](#marks)
+  - [Buffers](#buffers)
   - [Splits](#splits)
   - [Line split](#line-split)
   - [Mapping keys](#mapping-keys)
@@ -427,6 +428,24 @@ Automatic/internal marks.
 | `"`              | Last exited position in current file   |
 | `[`, `]`         | Start and end of last text change      |
 | `<`, `>`         | Start and end of last visual selection |
+
+## Buffers
+
+In Vim, a buffer is an in-memory representation of a file. When you open multiple files, each one gets its own buffer. You can switch between these buffers without reloading the files from disk.
+
+```console
+nvim file1.txt file2.txt
+```
+
+| Task                            | Command                      |
+| ------------------------------- | ---------------------------- |
+| List open buffers               | `:ls` or `:buffers`          |
+| Switch to another buffer        | `:b <buffer number or name>` |
+| Open buffer in vertical split   | `:vsp <filename>`            |
+| Open buffer in horizontal split | `:sp <filename>`             |
+| Delete buffer (keep window)     | `:bd` or `:bdelete`          |
+
+This allows you to work with multiple files efficiently and to copy/paste between them!
 
 ## Splits
 
