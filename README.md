@@ -437,13 +437,14 @@ In Vim, a buffer is an in-memory representation of a file. When you open multipl
 nvim file1.txt file2.txt
 ```
 
-| Task                            | Command                      |
-| ------------------------------- | ---------------------------- |
-| List open buffers               | `:ls` or `:buffers`          |
-| Switch to another buffer        | `:b <buffer number or name>` |
-| Open buffer in vertical split   | `:vsp <filename>`            |
-| Open buffer in horizontal split | `:sp <filename>`             |
-| Delete buffer (keep window)     | `:bd` or `:bdelete`          |
+| Task                                        | Command                      |
+| ------------------------------------------- | ---------------------------- |
+| List open buffers                           | `:ls` or `:buffers`          |
+| Switch to another buffer                    | `:b <buffer number or name>` |
+| Toggle between current and last used buffer | `Ctrl+^`                     |
+| Open buffer in vertical split               | `:vsp <filename>`            |
+| Open buffer in horizontal split             | `:sp <filename>`             |
+| Delete buffer (keep window)                 | `:bd` or `:bdelete`          |
 
 This allows you to work with multiple files efficiently and to copy/paste between them! Note that when you open a buffer in a split, quitting the split will not remove the buffer. Use the delete buffer command as shown above.
 
