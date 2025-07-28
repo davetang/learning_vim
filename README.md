@@ -30,6 +30,7 @@
 - [Neovim](#neovim)
   - [Transitioning from Vim](#transitioning-from-vim)
   - [Articles](#articles)
+- [Language Server Protocol](#language-server-protocol)
 
 # Vim
 
@@ -667,3 +668,16 @@ source ~/.vimrc
 
 * [What is Neovim, and how is it different from Vim?](https://vi.stackexchange.com/questions/34/what-is-neovim-and-how-is-it-different-from-vim).
 * [How to share config between Vim and Neovim](https://vi.stackexchange.com/questions/12794/how-to-share-config-between-vim-and-neovim)
+
+# Language Server Protocol
+
+> The [Language Server Protocol](https://en.wikipedia.org/wiki/Language_Server_Protocol) (LSP) is an open, JSON-RPC-based protocol for use between source code editors or integrated development environments (IDEs) and servers that provide "language intelligence tools": programming language-specific features like code completion, syntax highlighting and marking of warnings and errors, as well as refactoring routines. The goal of the protocol is to allow programming language support to be implemented and distributed independently of any given editor or IDE. In the early 2020s, LSP quickly became a "norm" for language intelligence tools providers.
+>
+> Prior to the design and implementation of the Language Server Protocol for the development of Visual Studio Code, most language services were generally tied to a given IDE or other editor. In the absence of the Language Server Protocol, language services are typically implemented by using a tool-specific extension API. Providing the same language service to another editing tool requires effort to adapt the existing code so that the service may target the second editor's extension interfaces.
+When a user edits one or more source code files using a language server protocol-enabled tool, the tool acts as a client that consumes the language services provided by a language server. The tool may be a text editor or IDE and the language services could be refactoring, code completion, etc.
+>
+> The client informs the server about what the user is doing, e.g., opening a file or inserting a character at a specific text position. The client can also request the server to perform a language service, e.g. to format a specified range in the text document. The server answers a client's request with an appropriate response. For example, the formatting request is answered either by a response that transfers the formatted text to the client or by an error response containing details about the error.
+>
+> The Language Server Protocol defines the messages to be exchanged between client and language server. They are JSON-RPC preceded by headers similar to HTTP. Messages may originate from the server or client.
+>
+> The protocol does not make any provisions about how requests, responses and notifications are transferred between client and server. For example, client and server could be components within the same process exchanging JSON strings via method calls. They could also be different processes on the same or on different machines communicating via network sockets.
