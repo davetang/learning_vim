@@ -140,7 +140,32 @@ endtry
 
 #### coc.nvim
 
-[coc.nvim](https://github.com/neoclide/coc.nvim) is a Nodejs extension host for Vim. Load extensions like VSCode and host language servers.
+[coc.nvim](https://github.com/neoclide/coc.nvim) is a Nodejs extension host for Vim. Load extensions like VSCode and host language servers. You **have to** install coc extensions or configure language servers for LSP support.
+
+Install extensions like this:
+
+```console
+:CocInstall coc-json coc-tsserver
+```
+
+[The](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions) main reason for having extensions is to achieve better user experience. Some language servers provided by the community are less straightforward and easy to use as VS Code extensions. Coc extensions can be forked from VS Code extensions and should provide similar or better user experience.
+
+You can find available coc extensions by searching [coc.nvim on npm](https://www.npmjs.com/search?q=keywords%3Acoc.nvim), or use [coc-marketplace](https://github.com/fannheyward/coc-marketplace), which can search and install extensions in coc.nvim directly.
+
+Or you can configure a language server in your coc-settings.json(open it using :CocConfig) like this:
+
+```
+{
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "trace.server": "verbose",
+      "filetypes": ["go"]
+    }
+  }
+}
+```
 
 The default is to use C-y to insert and C-n (n for next) and C-p (p for previous) to go through choices.
 
