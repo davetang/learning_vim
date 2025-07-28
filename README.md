@@ -167,6 +167,17 @@ Or you can configure a language server in your coc-settings.json(open it using :
 }
 ```
 
+For R, use <https://github.com/REditorSupport/languageserver>, which is an implementation of the Language Server Protocol for R. Installing requires `npm` **and** the {languageserver} package in R; if you just install `coc-r-lsp` it will complain that the {languageserver} package could not be found.
+
+```
+:CocInstall coc-r-lsp
+```
+```r
+install.packages("languageserver")
+```
+
+For `coc-r-lsp` you can use <tab> to cycle through choices and enter to confirm.
+
 The default is to use C-y to insert and C-n (n for next) and C-p (p for previous) to go through choices.
 
 [Completion with sources](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources) has instructions for remapping the default.
