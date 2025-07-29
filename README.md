@@ -669,6 +669,7 @@ source ~/.vimrc
 
 * [What is Neovim, and how is it different from Vim?](https://vi.stackexchange.com/questions/34/what-is-neovim-and-how-is-it-different-from-vim).
 * [How to share config between Vim and Neovim](https://vi.stackexchange.com/questions/12794/how-to-share-config-between-vim-and-neovim)
+* [Guide to using Lua in Nvim](https://neovim.io/doc/user/lua-guide.html#lua-guide)
 
 # Language Server Protocol
 
