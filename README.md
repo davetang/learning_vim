@@ -31,6 +31,7 @@
   - [Transitioning from Vim](#transitioning-from-vim)
   - [Articles](#articles)
 - [Language Server Protocol](#language-server-protocol)
+  - [Nextflow](#nextflow)
 
 # Vim
 
@@ -681,3 +682,48 @@ When a user edits one or more source code files using a language server protocol
 > The Language Server Protocol defines the messages to be exchanged between client and language server. They are JSON-RPC preceded by headers similar to HTTP. Messages may originate from the server or client.
 >
 > The protocol does not make any provisions about how requests, responses and notifications are transferred between client and server. For example, client and server could be components within the same process exchanging JSON strings via method calls. They could also be different processes on the same or on different machines communicating via network sockets.
+
+## Nextflow
+
+Following Samuel Lampa's guide (thanks!) to [Setting up the Nextflow Language Server (LSP) with NeoVim](https://livesys.se/posts/nextflow-lsp-with-neovim/).
+
+Step 1. Add basic syntax highlighting support for Nextflow.
+
+> The [syntax](https://neovim.io/doc/user/syntax.html#_2.-syntax-files) and highlighting commands for one language are normally stored in a syntax file.	The name convention is: "{name}.vim".  Where {name} is the name of the language, or an abbreviation (to fit the name in 8.3 characters, a requirement in case the file is used on a DOS filesystem).
+>
+> The syntax file can contain any Ex commands, just like a vimrc file.  But the idea is that only commands for a specific language are included.  When a language is a superset of another language, it may include the other one, for example, the cpp.vim file could include the c.vim file:
+
+```console
+git clone https://github.com/nextflow-io/vim-language-nextflow.git
+cd vim-language-nextflow
+mkdir -p ~/.config/nvim/syntax
+cp syntax/nextflow.vim ~/.config/nvim/syntax
+```
+
+Step 2. Install the Nextflow language server.
+
+```console
+VER=25.04.3
+mkdir -p ${HOME}/opt/nfls/${VER}
+wget -O ${HOME}/opt/nfls/${VER}/language-server-all.jar https://github.com/nextflow-io/language-server/releases/download/v${VER}/language-server-all.jar
+```
+
+Step 3. Add the following to `~/.config/nvim/init.lua`.
+
+```
+vim.lsp.enable('nextflow')
+
+vim.lsp.config['nextflow'] = {
+  cmd = { 'java', '-jar', '/home/dtang/opt/nfls/25.04.3/language-server-all.jar' },
+  filetypes = { 'nextflow', 'nf', 'groovy', 'config' },
+  root_markers = { 'nextflow.config', '.git' },
+  settings = {
+    nextflow = {
+      files = {
+        exclude = { '.git', '.nf-test', 'work' },
+      }
+    }
+  }
+}
+```
+
