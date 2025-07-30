@@ -1,6 +1,7 @@
 ## Table of Contents
 
 - [Vim](#vim)
+  - [User manual](#user-manual)
   - [Setup](#setup)
     - [Compiling](#compiling)
     - [Plugins](#plugins)
@@ -36,6 +37,10 @@
 # Vim
 
 Vim for life.
+
+## User manual
+
+[VIM USER MANUAL - by Bram Moolenaar](https://neovim.io/doc/user/usr_toc.html#user-manual).
 
 ## Setup
 
