@@ -185,6 +185,33 @@ install.packages("languageserver")
 
 For `coc-r-lsp` you can use <tab> to cycle through choices and enter to confirm.
 
+For Python:
+
+```
+:CocInstall coc-pyright
+```
+
+Then configure coc.nvim for Python:
+
+```
+:CocConfig
+```
+
+Add the following:
+
+```
+{
+  "python.pythonPath": "/home/dtang/miniforge3/bin/python3",
+  "suggest.autoTrigger": "always",
+  "suggest.enablePreselect": true,
+  "suggest.detailField": "documentation",
+  "hover.enable": true,
+  "signature.enable": true
+}
+```
+
+And that's it for Python!
+
 The default is to use C-y to insert and C-n (n for next) and C-p (p for previous) to go through choices.
 
 [Completion with sources](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources) has instructions for remapping the default.
