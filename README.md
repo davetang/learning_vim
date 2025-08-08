@@ -429,6 +429,14 @@ Use `r` to make a replacement. This is handy in visual mode, when I want to repl
 r<space>
 ```
 
+Jump to changed lines:
+
+```
+:Gdiffsplit
+]c        " next change
+[c        " previous change
+```
+
 #### Find and till
 
 [Find and till tips](https://vim.fandom.com/wiki/Tutorial#Find_and_till).
