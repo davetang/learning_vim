@@ -257,6 +257,7 @@ The crown jewel of Fugitive is `:Git` (or just `:G`), which calls any arbitrary 
 * `:Git commit`, `:Git rebase -i`, and other commands that invoke an editor do their editing in the current Vim instance.
 * Reset your changes from the latest git commit with `:Gread`.
 * Stage your changes with `:Gwrite`.
+* `:G blame` Opens a side split with per-line blame annotations.
 
 #### vim-easy-align
 
