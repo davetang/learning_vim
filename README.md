@@ -429,7 +429,7 @@ Use `r` to make a replacement. This is handy in visual mode, when I want to repl
 r<space>
 ```
 
-Jump to changed lines:
+When using the vim-fugitive plugin `:Gdiffsplit` will show you the previous version in a split window! Use `]c` and `[c` to navigate the changes.
 
 ```
 :Gdiffsplit
