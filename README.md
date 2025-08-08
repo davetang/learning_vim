@@ -210,7 +210,7 @@ Add the following:
 }
 ```
 
-And that's it for Python!
+To look up a function, position the cursor on the function and press `K`. And that's it for Python!
 
 The default is to use C-y to insert and C-n (n for next) and C-p (p for previous) to go through choices.
 
