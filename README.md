@@ -461,6 +461,12 @@ When using the vim-fugitive plugin `:Gdiffsplit` will show you the previous vers
 [c        " previous change
 ```
 
+`diffsplit` can be used to compare files; open the first file in Vim then:
+
+```
+:vert diffsplit otherfile
+```
+
 #### Find and till
 
 [Find and till tips](https://vim.fandom.com/wiki/Tutorial#Find_and_till).
