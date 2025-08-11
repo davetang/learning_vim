@@ -437,6 +437,7 @@ The only way to get good with Vim is by practicing. Here are some new shortcuts 
 * `O` insert a new line before the current one
 * `^` go to first non-blank character (good for indented code)
 * `g_` go to the last non-blank character of line
+* Use `>` to increase the indentation; for example select lines to indent and press `>`.
 
 ```
           aaaaa
