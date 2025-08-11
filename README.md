@@ -17,6 +17,7 @@
     - [Basic word movements](#basic-word-movements)
     - [Execute current line in Bash](#execute-current-line-in-bash)
     - [Selecting entire word that includes dashes](#selecting-entire-word-that-includes-dashes)
+    - [Jumps](#jumps)
     - [Key notation](#key-notation)
     - [Practice](#practice)
       - [Find and till](#find-and-till)
@@ -348,6 +349,28 @@ Use `viW`.
 * the `iW` text-object ("inner WORD") would cover "how-are-you"
 
 See `:help navigation`.
+
+### Jumps
+
+Vim has a couple of built-in jump back shortcuts that let you return to where you were before your last big movement.
+
+* \`\`\`\` (two backticks) - moves the cursor to the exact line and column of the previous jump.
+* `` `' `` (backtick followed by a single quote `'`) - moves the cursor to the first non-blank character of the previous jump's line.
+
+The following counts as jumps:
+
+* Searching (`/` or `?`)
+* Using marks
+* Using `G`, `gg`, `{`, `}`, `(`, `)`, etc.
+* Tag navigation (`Ctrl-]`)
+* Going to a line number
+
+Vim also keeps a jump list, which is a history of locations you've jumped to. You can move through it:
+
+* **Ctrl-o** to jump to **older** position in the list (go back)
+* **Ctrl-i** to Jump to **newer** position (go forward)
+
+Use `:jumps` to view your jump list.
 
 ### Key notation
 
