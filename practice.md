@@ -1,10 +1,14 @@
+## Table of Contents
+
+  - [Practice](#practice)
+    - [Motions](#motions)
+    - [Find and till](#find-and-till)
+
 ## Practice
 
 The only way to get good with Vim is by practicing. Here are some new shortcuts that I need to practice.
 
 * Use `"+y` to yank to the clipboard
-* Use `<CTRL> F` and `<CTRL> B` to scroll forward and backward a whole screen
-* Use `H`, `M`, and `L` to move to the top, middle, and bottom of the current visible page.
 * `J` to join two lines together
 * `o` insert a new line after the current one
 * `O` insert a new line before the current one
@@ -78,7 +82,17 @@ When using the vim-fugitive plugin `:Gdiffsplit` will show you the previous vers
 :vert diffsplit otherfile
 ```
 
-#### Find and till
+### Motions
+
+When editing Markdown files, these are some very handy motions.
+
+* Use `<CTRL> F` and `<CTRL> B` to scroll forward and backward a whole screen
+* Use `H`, `M`, and `L` to move to the top, middle, and bottom of the current visible page.
+* `(` / `)` - Jump backward/forward a sentence.
+* `{` / `}` - Jump backward/forward a paragraph.
+* `[[` / `]]` - Jump to the start of the previous/next function but works for headers in Markdown.
+
+### Find and till
 
 [Find and till tips](https://vim.fandom.com/wiki/Tutorial#Find_and_till).
 
