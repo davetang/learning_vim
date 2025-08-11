@@ -19,6 +19,7 @@
     - [Selecting entire word that includes dashes](#selecting-entire-word-that-includes-dashes)
     - [Jumps](#jumps)
     - [Key notation](#key-notation)
+    - [Motions](#motions)
     - [Practice](#practice)
       - [Find and till](#find-and-till)
   - [Zone selection](#zone-selection)
@@ -387,6 +388,42 @@ notation    meaning            equivalent  decimal    value(s)
 <Return>    same as <CR>                              *<Return>*
 <Enter>     same as <CR>                              *<Enter>*
 ```
+
+### Motions
+
+In Vim, many commands need to know from where to where before they can act; that range of text is the **motion**. For example, `d` is delete and `w` is the motion to delete a word. Any operator command (`d`, `y`, `c`, `gU`, `gu`, `!`, etc.) works with motions.
+
+Some common motions:
+
+* `w` — to start of next word
+* `e` — to end of current/next word
+* `0` — to start of line
+* `^` — to first non-blank
+* `$` — to end of line
+* `}` — to next paragraph
+
+Some more motions:
+
+| Motion                                                   | Meaning                                                                                                                         |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `gn`                                                     | Select the next match of the last search **as a motion**. Works with operators: `dgn` deletes the next match, `cgn` changes it. |
+| `gN`                                                     | Same as `gn`, but goes backwards to the previous match.                                                                         |
+| `[[` / `]]`                                              | Jump to the start of the previous/next function (based on `{`/`}` style braces).                                                |
+| `[]` / `][`                                              | Jump to the end of the previous/next function.                                                                                  |
+| `(` / `)`                                                | Jump backward/forward a sentence.                                                                                               |
+| `}` / `{`                                                | Jump forward/backward a paragraph.                                                                                              |
+| `at` / `it`                                              | A tag (HTML/XML), outer/inner. `dit` deletes inside tag, `dat` deletes tag + contents.                                          |
+| `ap` / `ip`                                              | A paragraph (outer/inner).                                                                                                      |
+| `a)` / `i)` (also with `]`, `}`, `>`, `"`, `'`, `` ` ``) | Around/inside parentheses, braces, angle brackets, quotes, etc.                                                                 |
+| `%`                                                      | Match the corresponding bracket/parenthesis/brace. Works as a motion too: `d%` deletes everything between matching braces.      |
+| `^V` blockwise + `o`                                     | Block motion toggle to jump between start and end of selection.                                                                 |
+| `/pattern/<CR>`                                          | A search itself can be used as a motion: `d/pattern` deletes up to the match.                                                   |
+| `?pattern<CR>`                                           | Same but backwards.                                                                                                             |
+| `/pattern/+N`                                            | Motion up to N lines after the match.                                                                                           |
+| `H`, `M`, `L`                                            | Motions to top, middle, bottom of screen (e.g., `dL` deletes from cursor to bottom of visible screen).                          |
+| `G` with count                                           | Motion to a specific line number.                                                                                               |
+| `[[` + `]]` + `d`                                        | Delete entire functions or blocks in code.                                                                                      |
+| `` `[ `` and `` `] ``                                    | Start/end of last change (useful for quickly operating on freshly edited text).                                                 |
 
 ### Practice
 
