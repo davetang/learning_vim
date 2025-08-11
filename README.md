@@ -354,7 +354,7 @@ See `:help navigation`.
 
 Vim has a couple of built-in jump back shortcuts that let you return to where you were before your last big movement.
 
-* \`\`\`\` (two backticks) - moves the cursor to the exact line and column of the previous jump.
+* ` `` ` (two backticks) - moves the cursor to the exact line and column of the previous jump.
 * `` `' `` (backtick followed by a single quote `'`) - moves the cursor to the first non-blank character of the previous jump's line.
 
 The following counts as jumps:
