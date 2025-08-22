@@ -51,8 +51,8 @@ vim.call('plug#end')
 -- highlight the line currently under cursor
 vim.opt.cursorline = true
 
--- enable spell checking by default
-vim.opt.spell = true
+-- spell checking if you want it
+vim.opt.spell = false
 vim.opt.spellfile = vim.fn.expand("$HOME/.spellfile.add")
 
 -- set the spelling language
