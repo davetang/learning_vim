@@ -14,6 +14,9 @@ RUN apt-get clean all && \
    apt-get purge && \
    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN userdel -r ubuntu 2>/dev/null || true
+RUN groupdel ubuntu 2>/dev/null || true
+
 ARG USER=dtang
 RUN useradd -m -s /bin/bash -G sudo ${USER} && \
     echo "${USER}:${USER}" | chpasswd
