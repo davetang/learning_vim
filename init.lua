@@ -94,6 +94,13 @@ vim.opt.history = 1000
 -- disable the mouse
 vim.opt.mouse = ""
 
+-- Enable 24-bit RGB colors
+-- vim.opt.termguicolors = true
+
+-- Syntax highlighting and filetype plugins
+vim.cmd('syntax enable')
+vim.cmd('filetype plugin indent on')
+
 vim.lsp.enable('nextflow')
 
 vim.lsp.config['nextflow'] = {
