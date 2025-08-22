@@ -718,7 +718,13 @@ mkdir -p ${HOME}/opt/nfls/${VER}
 wget -O ${HOME}/opt/nfls/${VER}/language-server-all.jar https://github.com/nextflow-io/language-server/releases/download/v${VER}/language-server-all.jar
 ```
 
-Step 3. Add the following to `~/.config/nvim/init.lua`.
+Step 3. Install nvim-lspconfig; requires Nvim 0.11.3+.
+
+```console
+git clone https://github.com/neovim/nvim-lspconfig ~/.config/nvim/pack/nvim/start/nvim-lspconfig
+```
+
+Step 4. Add the following to `~/.config/nvim/init.lua`.
 
 ```
 vim.lsp.enable('nextflow')

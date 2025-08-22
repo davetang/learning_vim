@@ -93,3 +93,18 @@ vim.opt.history = 1000
 
 -- disable the mouse
 vim.opt.mouse = ""
+
+vim.lsp.enable('nextflow')
+
+vim.lsp.config['nextflow'] = {
+  cmd = { 'java', '-jar', '/home/dtang/opt/nfls/25.04.3/language-server-all.jar' },
+  filetypes = { 'nextflow', 'nf', 'groovy', 'config' },
+  root_markers = { 'nextflow.config', '.git' },
+  settings = {
+    nextflow = {
+      files = {
+        exclude = { '.git', '.nf-test', 'work' },
+      }
+    }
+  }
+}
