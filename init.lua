@@ -115,3 +115,23 @@ vim.lsp.config['nextflow'] = {
     }
   }
 }
+
+-- https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-cr-to-confirm-completion
+-- Confirm completion with <CR>
+vim.keymap.set("i", "<CR>", function()
+  return vim.fn["coc#pum#visible"]() == 1
+    and vim.fn["coc#pum#confirm"]()
+    or "\r"
+end, { expr = true, noremap = true })
+
+-- <CR> selects the first item and confirms if nothing is selected
+vim.keymap.set("i", "<CR>", [[coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"]],
+  { expr = true, noremap = true, silent = true })
+
+-- Navigate completion list with <Tab> and <S-Tab>
+vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"]],
+  { expr = true, noremap = true })
+
+vim.keymap.set("i", "<S-Tab>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"]],
+  { expr = true, noremap = true })
+
