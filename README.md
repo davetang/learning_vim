@@ -679,6 +679,7 @@ Nvim supports using `init.vim` **or** `init.lua` as the configuration file, but 
 * [What is Neovim, and how is it different from Vim?](https://vi.stackexchange.com/questions/34/what-is-neovim-and-how-is-it-different-from-vim).
 * [How to share config between Vim and Neovim](https://vi.stackexchange.com/questions/12794/how-to-share-config-between-vim-and-neovim)
 * [Guide to using Lua in Nvim](https://neovim.io/doc/user/lua-guide.html#lua-guide)
+* [Configuring Neovim with `init.lua`: A Comprehensive Guide](https://dev.to/mochafreddo/configuring-neovim-with-initlua-a-comprehensive-guide-2a7i)
 
 # Language Server Protocol
 
