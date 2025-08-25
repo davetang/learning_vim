@@ -1,4 +1,5 @@
 -- This file should be in ~/.config/nvim/lua/plugins
+-- run `:Lazy sync` after making changes to sync to latest changes
 return {
 
   {
@@ -9,9 +10,8 @@ return {
     "neovim/nvim-lspconfig"
   },
 
-  {
-    "neoclide/coc.nvim"
-  },
+  -- https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim#using-lazynvim
+  { 'neoclide/coc.nvim', branch = 'release'},
 
   {
     "junegunn/vim-easy-align"
