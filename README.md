@@ -674,6 +674,24 @@ source ~/.vimrc
 
 Nvim supports using `init.vim` **or** `init.lua` as the configuration file, but **not both at the same time**. This should be placed in your config directory (run `:echo stdpath('config')` to see where it is, e.g., `~/.config/nvim`). Note that you can also use Lua in `init.vim` and Vimscript in `init.lua`.
 
+## Plugins
+
+[Install lazy.nvim](https://lazy.folke.io/installation) and run `:checkhealth lazy` after installation. To install plugins, create `$HOME/.config/nvim/lua/plugins/spec1.lua`; here's an example:
+
+```
+return {
+  -- https://github.com/tpope/vim-sensible/tree/master
+  {
+    "tpope/vim-sensible"
+  },
+
+  -- https://github.com/neovim/nvim-lspconfig
+  {
+    "neovim/nvim-lspconfig"
+  }
+}
+```
+
 ## Articles
 
 * [What is Neovim, and how is it different from Vim?](https://vi.stackexchange.com/questions/34/what-is-neovim-and-how-is-it-different-from-vim).
