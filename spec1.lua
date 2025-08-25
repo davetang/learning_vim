@@ -39,9 +39,10 @@ return {
     "altercation/vim-colors-solarized"
   },
 
-  {
-    "gabrielelana/vim-markdown"
-  },
+  -- https://github.com/preservim/vim-markdown
+  -- Folding is enabled for headers by default.
+  -- `zR`: opens all folds
+  { "preservim/vim-markdown" },
 
   {
     "jalvesaq/Nvim-R"
