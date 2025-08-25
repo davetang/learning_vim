@@ -35,6 +35,11 @@ return {
     "airblade/vim-gitgutter"
   },
 
+  -- use the plugin in the on-the-fly mode use
+  -- :TableModeToggle
+  -- mapped to <Leader>tm by default (which means `\tm`)
+  { "dhruvasagar/vim-table-mode" },
+
   {
     "altercation/vim-colors-solarized"
   },
