@@ -87,3 +87,8 @@ vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"]],
 vim.keymap.set("i", "<S-Tab>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"]],
   { expr = true, noremap = true })
 
+-- Set leader to space
+vim.g.mapleader = " "
+
+-- LSP keymap bindings
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = "Show diagnostic in float" })
