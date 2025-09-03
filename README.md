@@ -31,6 +31,9 @@
   - [Python code completion](#python-code-completion)
 - [Neovim](#neovim)
   - [Transitioning from Vim](#transitioning-from-vim)
+  - [Plugins](#plugins)
+  - [Tips](#tips)
+    - [Diff mode](#diff-mode)
   - [Articles](#articles)
 - [Language Server Protocol](#language-server-protocol)
   - [Nextflow](#nextflow)
@@ -691,6 +694,41 @@ return {
   }
 }
 ```
+
+## Tips
+
+### Diff mode
+
+Neovim (like Vim) has a diff mode (`-d`), which can highlight differences between files side by side.
+
+```console
+nvim -d file1 file2
+```
+
+This opens both files in split windows with differences highlighted.
+
+If you have already opened Neovim:
+
+1. Open first file:
+
+```vim
+:e file1
+```
+
+2. Open second file in a vertical split:
+
+```vim
+:vert diffsplit file2
+```
+
+Useful diff commands:
+
+* `]c` - jump to **next difference**
+* `[c` - jump to **previous difference**
+* `do` - "diff obtain" (apply change from other file)
+* `dp` - "diff put" (apply change to other file)
+* `:diffupdate` - re-scan and update highlighting
+* `:diffoff!` - turn off diff mode
 
 ## Articles
 
