@@ -92,3 +92,7 @@ vim.g.mapleader = " "
 
 -- LSP keymap bindings
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = "Show diagnostic in float" })
+
+-- listing shortcuts here for convenience
+-- ]d   " go to next diagnostic (error, warning, hint, info)
+-- [d   " go to previous diagnostic
