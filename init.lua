@@ -101,6 +101,15 @@ vim.g.mapleader = " "
 --    noremap = true -> prevent recursive mapping (default for vim.keymap.set)
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = "Show diagnostic in float" })
 vim.keymap.set("n", "<leader>fe", ":Explore<CR>", { desc = "Open file explorer" })
+-- https://livesys.se/posts/nextflow-lsp-with-neovim/
+-- Go to definition when you want to jump to where something is defined.
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to Implementation' })
+-- rename the symbol under your cursor everywhere it appears.
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename Symbol' })
+-- Find references to see where it is used.
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Find References' })
 
 -- listing shortcuts here for convenience
 -- ]d   " go to next diagnostic (error, warning, hint, info)
