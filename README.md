@@ -754,7 +754,25 @@ When a user edits one or more source code files using a language server protocol
 
 Following Samuel Lampa's guide (thanks!) to [Setting up the Nextflow Language Server (LSP) with NeoVim](https://livesys.se/posts/nextflow-lsp-with-neovim/).
 
-Step 1. Add basic syntax highlighting support for Nextflow.
+Initial setup:
+
+Requires `java`; install it on Debian/Ubuntu if you haven't already:
+
+```console
+sudo apt update
+sudo apt install default-jre
+```
+
+Nvim 0.11.3+ is required to install the [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) plugin.
+
+1. Change from using `.vimrc` to `init.lua`.
+    * Copy `init.lua` to `/home/dtang/.config/nvim`
+2. Set up lazy.nvim and plugins:
+    * `mkdir -p ~/.config/nvim/lua/config && cp lazy.lua $_`
+    * `mkdir -p ~/.config/nvim/lua/plugins && cp spec1.lua $_`
+    * Run `:checkhealth lazy` in Nvim to make sure everything is working
+
+3. Add basic syntax highlighting support for Nextflow.
 
 > The [syntax](https://neovim.io/doc/user/syntax.html#_2.-syntax-files) and highlighting commands for one language are normally stored in a syntax file.	The name convention is: "{name}.vim".  Where {name} is the name of the language, or an abbreviation (to fit the name in 8.3 characters, a requirement in case the file is used on a DOS filesystem).
 >
@@ -767,36 +785,10 @@ mkdir -p ~/.config/nvim/syntax
 cp syntax/nextflow.vim ~/.config/nvim/syntax
 ```
 
-Step 2. Install the Nextflow language server.
+4. Install the Nextflow language server.
 
 ```console
 VER=25.04.3
 mkdir -p ${HOME}/opt/nfls/${VER}
 wget -O ${HOME}/opt/nfls/${VER}/language-server-all.jar https://github.com/nextflow-io/language-server/releases/download/v${VER}/language-server-all.jar
 ```
-
-Step 3. Install nvim-lspconfig; requires Nvim 0.11.3+.
-
-```console
-git clone https://github.com/neovim/nvim-lspconfig ~/.config/nvim/pack/nvim/start/nvim-lspconfig
-```
-
-Step 4. Add the following to `~/.config/nvim/init.lua`.
-
-```
-vim.lsp.enable('nextflow')
-
-vim.lsp.config['nextflow'] = {
-  cmd = { 'java', '-jar', '/home/dtang/opt/nfls/25.04.3/language-server-all.jar' },
-  filetypes = { 'nextflow', 'nf', 'groovy', 'config' },
-  root_markers = { 'nextflow.config', '.git' },
-  settings = {
-    nextflow = {
-      files = {
-        exclude = { '.git', '.nf-test', 'work' },
-      }
-    }
-  }
-}
-```
-
