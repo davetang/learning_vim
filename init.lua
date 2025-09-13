@@ -96,10 +96,11 @@ vim.g.mapleader = " "
 -- lhs: the key sequence you press
 -- rhs: the command or mapping it triggers
 -- opts: (optional) a table of options:
---    desc = "..." → description (shows up in :map and plugins like which-key)
---    silent = true → don’t echo command
---    noremap = true → prevent recursive mapping (default for vim.keymap.set)
+--    desc = "..." -> description (shows up in :map and plugins like which-key)
+--    silent = true -> don’t echo command
+--    noremap = true -> prevent recursive mapping (default for vim.keymap.set)
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = "Show diagnostic in float" })
+vim.keymap.set("n", "<leader>fe", ":Explore<CR>", { desc = "Open file explorer" })
 
 -- listing shortcuts here for convenience
 -- ]d   " go to next diagnostic (error, warning, hint, info)
