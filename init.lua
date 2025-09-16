@@ -53,8 +53,11 @@ vim.opt.mouse = ""
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
+-- get HOME
+local my_home = os.getenv("HOME")  -- or vim.fn.expand("$HOME")
+
 vim.lsp.config['nextflow'] = {
-  cmd = { 'java', '-jar', '/home/dtang/opt/nfls/25.04.3/language-server-all.jar' },
+  cmd = { 'java', '-jar', my_home .. '/opt/nfls/25.04.3/language-server-all.jar' },
   filetypes = { 'nextflow', 'nf', 'groovy', 'config' },
   root_markers = { 'nextflow.config', '.git' },
   settings = {
@@ -69,13 +72,13 @@ vim.lsp.enable('nextflow')
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/pyright.lua
 vim.lsp.config.pyright = {
-  cmd = { '/home/dtang/lib/bin/pyright-langserver', '--stdio' },
+  cmd = { my_home .. '/lib/bin/pyright-langserver', '--stdio' },
   filetypes = { 'python' }
 }
 vim.lsp.enable 'pyright'
 
 vim.lsp.config.bashls = {
-  cmd = { '/home/dtang/lib/bin/bash-language-server', 'start' },
+  cmd = { my_home .. '/lib/bin/bash-language-server', 'start' },
   filetypes = { 'bash', 'sh' }
 }
 vim.lsp.enable 'bashls'
