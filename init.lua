@@ -115,6 +115,8 @@ vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to Implementa
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename Symbol' })
 -- Find references to see where it is used.
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Find References' })
+-- format the current buffer
+vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, { desc = 'Format' })
 
 -- listing shortcuts here for convenience
 -- ]d   " go to next diagnostic (error, warning, hint, info)
