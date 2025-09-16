@@ -53,8 +53,6 @@ vim.opt.mouse = ""
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
-vim.lsp.enable('nextflow')
-
 vim.lsp.config['nextflow'] = {
   cmd = { 'java', '-jar', '/home/dtang/opt/nfls/25.04.3/language-server-all.jar' },
   filetypes = { 'nextflow', 'nf', 'groovy', 'config' },
@@ -67,6 +65,13 @@ vim.lsp.config['nextflow'] = {
     }
   }
 }
+vim.lsp.enable('nextflow')
+
+vim.lsp.config.bashls = {
+  cmd = { '/home/dtang/lib/bin/bash-language-server', 'start' },
+  filetypes = { 'bash', 'sh' }
+}
+vim.lsp.enable 'bashls'
 
 -- https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-cr-to-confirm-completion
 -- Confirm completion with <CR>
