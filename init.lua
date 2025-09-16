@@ -67,6 +67,13 @@ vim.lsp.config['nextflow'] = {
 }
 vim.lsp.enable('nextflow')
 
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/pyright.lua
+vim.lsp.config.pyright = {
+  cmd = { '/home/dtang/lib/bin/pyright-langserver', '--stdio' },
+  filetypes = { 'python' }
+}
+vim.lsp.enable 'pyright'
+
 vim.lsp.config.bashls = {
   cmd = { '/home/dtang/lib/bin/bash-language-server', 'start' },
   filetypes = { 'bash', 'sh' }
