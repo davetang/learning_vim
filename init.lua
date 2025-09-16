@@ -11,16 +11,16 @@ vim.opt.spellfile = vim.fn.expand("$HOME/.spellfile.add")
 vim.opt.spelllang = { "en_gb" }
 
 -- number of spaces that a <Tab> counts for
-vim.opt.tabstop = 3
+vim.opt.tabstop = 2
 
 -- convert tabs to spaces
 vim.opt.expandtab = true
 
 -- number of spaces to use for each step of (auto)indent
-vim.opt.shiftwidth = 3
+vim.opt.shiftwidth = 2
 
 -- number of spaces a <Tab> feels like when editing
-vim.opt.softtabstop = 3
+vim.opt.softtabstop = 2
 
 -- copy indent from current line when starting a new one
 vim.opt.autoindent = true
