@@ -8,6 +8,7 @@
 
 The only way to get good with Vim is by practicing. Here are some new shortcuts that I need to practice.
 
+* After matching using `*` you can replace all occurrences of the match by using `:%s//replacement/g`; `%` is the shorthand for `1,$`.
 * To replace a word using a yanked word, go to the start of the word and press `cw<C-r>0`, where `<C-r>` is Control+r. This is preferred because it's a repeatable action.
 * Use `"+y` to yank to the clipboard
 * `J` to join two lines together
