@@ -3,6 +3,7 @@
   - [Practice](#practice)
     - [Motions](#motions)
     - [Find and till](#find-and-till)
+    - [Argument list](#argument-list)
     - [Quickfix list](#quickfix-list)
 
 ## Practice
@@ -119,11 +120,23 @@ Magic happens when you combine the motions find and till with operators:
 * `dtx` delete all text till the next 'x'.
 * `dfx` same, but include the 'x'.
 
+### Argument list
+
+The argument list is just a list of files you tell Vim you want to work on. You can start Vim with a list of files:
+
+```console
+nvim *.yml
+```
+
+Then use `:args` in Vim to see the files.
+
+Use `:next` or `:n` to navigate to the next file in the list and `:prev` or `:N` to the previous file. You will have to save each change individually as you move between files.
+
 ### Quickfix list
 
-The quickfix list is a special buffer in Vim that stores file positions (filename + line + column). It was originally designed to hold compiler errors, but you can also fill it with search results.
+The quickfix list is a special buffer in Vim that stores file positions (filename + line + column) and not just the files, like in an argument list. It was originally designed to hold compiler errors, but you can also fill it with search results.
 
-One task I regularly perform is updated the version of the GitHub action [checkout](https://github.com/actions/checkout).
+One task I regularly perform is updating the version of the GitHub action [checkout](https://github.com/actions/checkout). Using the quickfix list is handy because I can quickly create a list of files and locations of where I need to make the changes.
 
 1. Open Nvim
 2. Inside Nvim, populate the Quickfix List with `:grep`
