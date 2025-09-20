@@ -3,6 +3,7 @@
   - [Practice](#practice)
     - [Motions](#motions)
     - [Find and till](#find-and-till)
+    - [Quickfix list](#quickfix-list)
 
 ## Practice
 
@@ -117,3 +118,20 @@ Magic happens when you combine the motions find and till with operators:
 * `cfx` same, but include the 'x'.
 * `dtx` delete all text till the next 'x'.
 * `dfx` same, but include the 'x'.
+
+### Quickfix list
+
+The quickfix list is a special buffer in Vim that stores file positions (filename + line + column). It was originally designed to hold compiler errors, but you can also fill it with search results.
+
+One task I regularly perform is updated the version of the GitHub action [checkout](https://github.com/actions/checkout).
+
+1. Open Nvim
+2. Inside Nvim, populate the Quickfix List with `:grep`
+
+```vim
+:grep checkout **/*.yml
+```
+
+3. Open the list with `:copen` and work through each file!
+4. Use `:cnext` or `:cn` to jump to the next match and `:cprev` or `:cp` to jump to the previous match!
+5. Make the change in the match and save; keep going until you're done!
