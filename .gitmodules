@@ -1,0 +1,3 @@
+[submodule "install_scripts"]
+	path = install_scripts
+	url = git@github.com:davetang/install_scripts
