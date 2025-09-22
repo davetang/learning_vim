@@ -29,3 +29,13 @@ ln -s $HOME/github/learning_vim/spec1.lua .
 ```
 
 9. Start using Nvim!
+
+## Language Servers
+
+Currently `init.lua` contains configurations for three language servers:
+
+1. `bash-language-server`
+2. `pyright`
+3. Nextflow
+
+Install them using the install scripts.
