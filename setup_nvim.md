@@ -37,5 +37,12 @@ Currently `init.lua` contains configurations for three language servers:
 1. `bash-language-server`
 2. `pyright`
 3. Nextflow
+4. `autotools-language-server`
 
-Install them using the install scripts.
+Install 1., 2., and 3. with the install scripts.
+
+For 4. use `pip` to install [autotools-language-server](https://autotools-language-server.readthedocs.io/en/latest/index.html).
+
+```console
+pip install autotools-language-server
+```

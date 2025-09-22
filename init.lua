@@ -83,6 +83,26 @@ vim.lsp.config.bashls = {
 }
 vim.lsp.enable 'bashls'
 
+-- https://autotools-language-server.readthedocs.io/en/latest/resources/configure.html#neovim
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "configure.ac" },
+  callback = function()
+    vim.lsp.start({
+      name = "config",
+      cmd = { "config-language-server" }
+    })
+  end,
+})
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "Makefile.am", "Makefile" },
+  callback = function()
+    vim.lsp.start({
+      name = "make",
+      cmd = { "make-language-server" }
+    })
+  end,
+})
+
 -- https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-cr-to-confirm-completion
 -- Confirm completion with <CR>
 vim.keymap.set("i", "<CR>", function()
