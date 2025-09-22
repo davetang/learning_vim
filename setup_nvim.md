@@ -32,16 +32,14 @@ ln -s $HOME/github/learning_vim/spec1.lua .
 
 ## Language Servers
 
-Currently `init.lua` contains configurations for three language servers:
+Currently `init.lua` contains configurations for the following language servers:
 
-1. `bash-language-server`
-2. `pyright`
-3. Nextflow
-4. `autotools-language-server`
+1. [bash-language-server](https://github.com/bash-lsp/bash-language-server)
+2. [pyright](https://github.com/microsoft/pyright)
+3. [Nextflow](https://github.com/nextflow-io/language-server)
+4. [autotools-language-server](https://autotools-language-server.readthedocs.io/en/latest/index.html)
 
-Install 1., 2., and 3. with the install scripts.
-
-For 4. use `pip` to install [autotools-language-server](https://autotools-language-server.readthedocs.io/en/latest/index.html).
+Install 1., 2., and 3. with the install scripts; for 4. use `pip` to install.
 
 ```console
 pip install autotools-language-server
