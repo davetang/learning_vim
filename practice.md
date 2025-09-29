@@ -1,6 +1,7 @@
 ## Table of Contents
 
   - [Practice](#practice)
+    - [Buffers](#buffers)
     - [Motions](#motions)
     - [Find and till](#find-and-till)
     - [Argument list](#argument-list)
@@ -85,6 +86,10 @@ When using the vim-fugitive plugin `:Gdiffsplit` will show you the previous vers
 ```
 :vert diffsplit otherfile
 ```
+
+### Buffers
+
+Use `:ls` to list buffers and `:bd` (buffer delete) to close the buffer. If you quit, this will exit Vim entirely, instead of just closing a specific buffer.
 
 ### Motions
 
