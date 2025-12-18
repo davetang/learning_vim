@@ -3,6 +3,7 @@
   - [Telescope](#telescope)
   - [Language Server](#language-server)
   - [Practice](#practice)
+    - [Diff mode](#diff-mode)
     - [Buffers](#buffers)
     - [Motions](#motions)
     - [Find and till](#find-and-till)
@@ -107,6 +108,39 @@ When using the vim-fugitive plugin `:Gdiffsplit` will show you the previous vers
 ```
 :vert diffsplit otherfile
 ```
+
+### Diff mode
+
+Neovim (like Vim) has a diff mode (`-d`), which can highlight differences between files side by side.
+
+```console
+nvim -d file1 file2
+```
+
+This opens both files in split windows with differences highlighted.
+
+If you have already opened Neovim:
+
+1. Open first file:
+
+```vim
+:e file1
+```
+
+2. Open second file in a vertical split:
+
+```vim
+:vert diffsplit file2
+```
+
+Useful diff commands:
+
+* `]c` - jump to **next difference**
+* `[c` - jump to **previous difference**
+* `do` - "diff obtain" (apply change from other file)
+* `dp` - "diff put" (apply change to other file)
+* `:diffupdate` - re-scan and update highlighting
+* `:diffoff!` - turn off diff mode
 
 ### Buffers
 
