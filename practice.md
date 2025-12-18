@@ -1,5 +1,6 @@
 ## Table of Contents
 
+  - [Telescope](#telescope)
   - [Language Server](#language-server)
   - [Practice](#practice)
     - [Buffers](#buffers)
@@ -7,6 +8,15 @@
     - [Find and till](#find-and-till)
     - [Argument list](#argument-list)
     - [Quickfix list](#quickfix-list)
+
+## Telescope
+
+* `<leader>ff` - Telescope find files
+* `<leader>fg` - Telescope live grep
+* `<leader>fb` - Telescope buffers
+* `<leader>fh` - Telescope help tags
+
+To delete a buffer but keep window - `:bd` or `:bdelete`
 
 ## Language Server
 
