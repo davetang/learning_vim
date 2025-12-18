@@ -1,11 +1,22 @@
 ## Table of Contents
 
+  - [Language Server](#language-server)
   - [Practice](#practice)
     - [Buffers](#buffers)
     - [Motions](#motions)
     - [Find and till](#find-and-till)
     - [Argument list](#argument-list)
     - [Quickfix list](#quickfix-list)
+
+## Language Server
+
+* `<leader>d` - "Show diagnostic in float"
+* `<leader>fe` - Open file explorer
+* `gd` - Go to Definition
+* `K` - Hover Documentation
+* `gi` - Go to Implementation
+* `<leader>rn` - Rename Symbol
+* `gr` - Find References
 
 ## Practice
 
