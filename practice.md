@@ -33,6 +33,10 @@ To delete a buffer but keep window - `:bd` or `:bdelete`
 
 The only way to get good with Vim is by practicing. Here are some new shortcuts that I need to practice.
 
+* Use `:normal` (or `:norm`) to execute normal mode commands as if you typed them directly.
+    * `:%norm A;` - add `;` to the end of every line.
+    * `:.,$norm I#` - add `#` to the start of the current line until the end.
+    * `:1,.norm I#` - add `#` from the start to the current line.
 * After matching using `*` you can replace all occurrences of the match by using `:%s//replacement/g`; `%` is the shorthand for `1,$`.
 * To replace a word using a yanked word, go to the start of the word and press `cw<C-r>0`, where `<C-r>` is Control+r. This is preferred because it's a repeatable action.
 * Use `"+y` to yank to the clipboard
