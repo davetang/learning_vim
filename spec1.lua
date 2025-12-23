@@ -100,7 +100,7 @@ return {
   { "preservim/vim-markdown" },
 
   {
-    "jalvesaq/Nvim-R"
+    "R-nvim/R.nvim",
   },
 
   {
