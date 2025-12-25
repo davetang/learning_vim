@@ -10,6 +10,10 @@
     - [Argument list](#argument-list)
     - [Quickfix list](#quickfix-list)
 
+## fugitive.vim
+
+The crown jewel of Fugitive is :Git (or just :G), which calls any arbitrary Git command. If you know how to use Git at the command line, you know how to use :Git.
+
 ## Telescope
 
 * `<leader>ff` - Telescope find files
