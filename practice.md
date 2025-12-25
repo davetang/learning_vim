@@ -1,5 +1,6 @@
 ## Table of Contents
 
+  - [Fugitive](#fugitive)
   - [Telescope](#telescope)
   - [Language Server](#language-server)
   - [Practice](#practice)
@@ -10,9 +11,11 @@
     - [Argument list](#argument-list)
     - [Quickfix list](#quickfix-list)
 
-## fugitive.vim
+## Fugitive
 
 The crown jewel of Fugitive is :Git (or just :G), which calls any arbitrary Git command. If you know how to use Git at the command line, you know how to use :Git.
+
+Within Vim, just use `:G add`, `:G commit -m`, and `:G push`!
 
 ## Telescope
 
