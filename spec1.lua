@@ -103,6 +103,7 @@ return {
     "R-nvim/R.nvim",
   },
 
+  -- https://github.com/tpope/vim-fugitive
   {
     "tpope/vim-fugitive"
   }
