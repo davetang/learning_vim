@@ -155,7 +155,16 @@ Useful diff commands:
 
 ### Buffers
 
-Use `:ls` to list buffers and `:bd` (buffer delete) to close the buffer. If you quit, this will exit Vim entirely, instead of just closing a specific buffer.
+If you quit, this will exit Vim entirely, instead of just closing a specific buffer; use `:bd`.
+
+| Task                                        | Command                      |
+| ------------------------------------------- | ---------------------------- |
+| List open buffers                           | `:ls` or `:buffers`          |
+| Switch to another buffer                    | `:b <buffer number or name>` |
+| Toggle between current and last used buffer | `Ctrl+^`                     |
+| Open buffer in vertical split               | `:vsp <filename>`            |
+| Open buffer in horizontal split             | `:sp <filename>`             |
+| Delete buffer (keep window)                 | `:bd` or `:bdelete`          |
 
 ### Motions
 
