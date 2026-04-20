@@ -34,6 +34,7 @@
   - [Nvim Plugins](#nvim-plugins)
   - [Nvim Tips](#nvim-tips)
     - [Diff mode](#diff-mode)
+  - [Markdown](#markdown)
   - [Articles](#articles)
 - [Language Server Protocol](#language-server-protocol)
   - [Nextflow](#nextflow)
@@ -729,6 +730,43 @@ Useful diff commands:
 * `dp` - "diff put" (apply change to other file)
 * `:diffupdate` - re-scan and update highlighting
 * `:diffoff!` - turn off diff mode
+
+## Markdown
+
+For a GitHub/GitLab-style preview while editing Markdown in Neovim, use [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim). It opens a live preview in your browser that auto-updates as you type and supports mermaid diagrams, KaTeX math, emoji, and task lists.
+
+Add the following plugin spec to `spec1.lua`:
+
+```lua
+{
+  "iamcco/markdown-preview.nvim",
+  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  ft = { "markdown" },
+  build = function()
+    vim.cmd([[Lazy load markdown-preview.nvim]])
+    vim.fn["mkdp#util#install"]()
+  end,
+},
+```
+
+The `Lazy load` line is important: because the plugin is lazy-loaded by `cmd` and `ft`, its Vimscript functions aren't available when the build step runs. Force-loading it first makes `mkdp#util#install()` callable, otherwise `:Lazy sync` fails with `E117: Unknown function: mkdp#util#install`.
+
+Then run `:Lazy sync` inside Nvim so the plugin is downloaded and the preview assets are installed. Open a Markdown file and toggle the preview with:
+
+```
+:MarkdownPreview
+:MarkdownPreviewStop
+```
+
+For convenience, add a mapping to `init.lua` so you can toggle the preview without typing the command each time:
+
+```lua
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown preview" })
+```
+
+With the leader key set to Space, press `<Space>mp` in normal mode to toggle the preview on and off.
+
+The preview uses GitHub's rendering style, which is close to what GitLab displays (GitLab has minor differences in mermaid handling and a few extensions, but for most documents the output matches).
 
 ## Articles
 

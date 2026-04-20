@@ -99,6 +99,18 @@ return {
   -- `zR`: opens all folds
   { "preservim/vim-markdown" },
 
+  -- https://github.com/iamcco/markdown-preview.nvim
+  -- :MarkdownPreview / :MarkdownPreviewStop to toggle a browser preview.
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.cmd([[Lazy load markdown-preview.nvim]])
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+
   {
     "R-nvim/R.nvim",
   },
