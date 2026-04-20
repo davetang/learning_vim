@@ -204,6 +204,18 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- https://github.com/iamcco/markdown-preview.nvim
+-- Headless-server friendly: pin the port (forward it via SSH -L), echo the URL
+-- on start, and use a no-op browser function so the plugin does not try to
+-- launch a browser on the server.
+vim.g.mkdp_port = "8090"
+vim.g.mkdp_auto_start = 0
+vim.g.mkdp_auto_close = 1
+vim.g.mkdp_echo_preview_url = 1
+vim.cmd([[
+  function! MkdpNoopBrowser(url) abort
+  endfunction
+]])
+vim.g.mkdp_browserfunc = "MkdpNoopBrowser"
 vim.keymap.set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown preview' })
 
 -- custom :Practice command
