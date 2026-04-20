@@ -101,14 +101,16 @@ return {
 
   -- https://github.com/iamcco/markdown-preview.nvim
   -- :MarkdownPreview / :MarkdownPreviewStop to toggle a browser preview.
+  -- Uses the yarn-based build recommended by the plugin README. `npx --yes
+  -- yarn install` avoids needing yarn installed globally (requires node.js).
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.cmd([[Lazy load markdown-preview.nvim]])
-      vim.fn["mkdp#util#install"]()
+    build = "cd app && npx --yes yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
     end,
+    ft = { "markdown" },
   },
 
   {

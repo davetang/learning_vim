@@ -735,21 +735,21 @@ Useful diff commands:
 
 For a GitHub/GitLab-style preview while editing Markdown in Neovim, use [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim). It opens a live preview in your browser that auto-updates as you type and supports mermaid diagrams, KaTeX math, emoji, and task lists.
 
-Add the following plugin spec to `spec1.lua`:
+Add the following plugin spec to `spec1.lua` (this is the yarn-based form recommended by the plugin README -- it is more reliable than the `mkdp#util#install()` form, which downloads a prebuilt binary that can fail to resolve its Node modules):
 
 ```lua
 {
   "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  ft = { "markdown" },
-  build = function()
-    vim.cmd([[Lazy load markdown-preview.nvim]])
-    vim.fn["mkdp#util#install"]()
+  build = "cd app && npx --yes yarn install",
+  init = function()
+    vim.g.mkdp_filetypes = { "markdown" }
   end,
+  ft = { "markdown" },
 },
 ```
 
-The `Lazy load` line is important: because the plugin is lazy-loaded by `cmd` and `ft`, its Vimscript functions aren't available when the build step runs. Force-loading it first makes `mkdp#util#install()` callable, otherwise `:Lazy sync` fails with `E117: Unknown function: mkdp#util#install`.
+Requires `node.js` on PATH. `npx --yes yarn install` runs yarn via npx so you don't need yarn installed globally.
 
 Then run `:Lazy sync` inside Nvim so the plugin is downloaded and the preview assets are installed. Open a Markdown file and toggle the preview with:
 
