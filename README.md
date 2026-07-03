@@ -38,6 +38,7 @@
   - [Articles](#articles)
 - [Language Server Protocol](#language-server-protocol)
   - [Nextflow](#nextflow)
+- [Links](#links)
 
 # Vim
 
@@ -830,3 +831,7 @@ VER=25.04.3
 mkdir -p ${HOME}/opt/nfls/${VER}
 wget -O ${HOME}/opt/nfls/${VER}/language-server-all.jar https://github.com/nextflow-io/language-server/releases/download/v${VER}/language-server-all.jar
 ```
+
+# Links
+
+* [Vim text editor game teaches you keyboard shortcuts with ice cream delivery](https://www.theregister.com/software/2026/07/02/vim-text-editor-game-teaches-you-keyboard-shortcuts-with-ice-cream-delivery/5265940)
