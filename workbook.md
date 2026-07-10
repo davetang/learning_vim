@@ -3,6 +3,10 @@
 A set of before/after exercises for deliberate Vim practice. For each exercise:
 
 1. Copy the "Before" block into a scratch buffer (`:enew`).
+    * Use `V` to start a line-select then yank it.
+    * `:enew` to open an empty scratch buffer.
+    * Use `p` to paste the yanked line.
+    * Press Ctrl-^ to toggle between the two buffers; use `:bd!` to delete the buffer.
 2. Read the **Goal** and try to reach the "After" state.
 3. Try to use the motion/operator hinted at in the section title; there is usually more than one valid answer, but the hinted one is usually the shortest or most idiomatic.
 4. Expand **Answer** to check your keystrokes.
